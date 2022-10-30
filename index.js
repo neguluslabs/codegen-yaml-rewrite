@@ -1,3 +1,5 @@
+import path from "path";
+const workingDir = process.cwd(); // entirely dependent on what directory the process was launched from, so gotta find a better soln
 const errorLogger = (err) => {
   return console.error(
     `=================================================================
@@ -10,28 +12,40 @@ const updateYaml = (passedConfig) => {
   import("js-yaml").then((yaml) => {
     import("fs").then((fs) => {
       const yamlConfig = yaml.load(
-        fs.readFileSync(passedConfig.yamlPath || "./config.yaml")
+        fs.readFileSync(
+          path.join(workingDir, passedConfig.yamlPath) || "./config.yaml"
+        )
       );
       yamlConfig[passedConfig.targetYamlKey || "schema"] =
         process.env[passedConfig.targetEnvKey || ""];
-      fs.writeFile(passedConfig.yamlPath, yaml.dump(yamlConfig), (err) => {
-        if (err) {
-          errorLogger("Error writing yaml file");
+      fs.writeFile(
+        path.join(workingDir, passedConfig.yamlPath),
+        yaml.dump(yamlConfig),
+        (err) => {
+          if (err) {
+            errorLogger("Error writing yaml file");
+          }
+          console.log(
+            "Yaml file updated",
+            path.join(process.cwd(), passedConfig.envPath)
+          );
+          console.log("===Yaml file updated====");
         }
-        console.log("===Yaml file updated====");
-      });
+      );
     });
   });
 };
 
 const loadDotEnv = (passedConfig) => {
   import("dotenv").then((dotenv) => {
-    dotenv.config({ path: passedConfig.envPath || "./env" });
+    dotenv.config({
+      path: path.join(workingDir, passedConfig.envPath) || "./env",
+    });
     updateYaml(passedConfig);
   });
 };
 
-import("./codegen-rewrite-config.json", {
+import(`${workingDir}/codegen-rewrite-config.json`, {
   assert: { type: "json" },
 })
   .then((module) => {

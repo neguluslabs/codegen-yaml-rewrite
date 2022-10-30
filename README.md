@@ -46,6 +46,7 @@ in the package.json use this with prestart
 ```javascript
 
   "scripts": {
+   "codegen-yaml-rewrite": "node ./node_modules/codegen-yaml-rewrite/index.js", // looking for a way to make it directly accessible
     "prestart": "yarn codegen-yaml-rewrite && yarn generate",
   },
 
