@@ -19,7 +19,7 @@ yarn add codegen-yaml-rewrite
 A JSON config file should be created in the root folder named **codegen-rewrite-config.json**
 with the following keys and values
 
-```json
+```js
 {
   "envPath": "./.env", // path to env file
   "targetYamlKey": "schema", // key to be replaced in the yaml
@@ -46,7 +46,6 @@ in the package.json use this with prestart
 ```javascript
 
   "scripts": {
-   "codegen-yaml-rewrite": "node ./node_modules/codegen-yaml-rewrite/index.js", // looking for a way to make it directly accessible
     "prestart": "yarn codegen-yaml-rewrite && yarn generate",
   },
 
