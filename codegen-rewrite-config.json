@@ -1,0 +1,6 @@
+{
+  "envPath": "./.env",
+  "targetYamlKey": "schema",
+  "targetEnvKey": "NEXT_PUBLIC_GRAPHQL_ENDPOINT",
+  "yamlPath": "./codegen.yaml"
+}
