@@ -25,10 +25,7 @@ const updateYaml = (passedConfig) => {
           if (err) {
             errorLogger("Error writing yaml file");
           }
-          console.log(
-            "Yaml file updated",
-            path.join(process.cwd(), passedConfig.envPath)
-          );
+
           console.log("===Yaml file updated====");
         }
       );

@@ -1,6 +1,6 @@
 {
   "name": "codegen-yaml-rewrite",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "ee",
   "type": "module",
   "main": "index.js",
