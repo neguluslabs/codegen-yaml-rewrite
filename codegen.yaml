@@ -1,6 +1,0 @@
-schema: https://2sfmcqkvf3.execute-api.ap-south-1.amazonaws.com/dev/graphql_api
-generates:
-  apps/palavv-web/graphql/generated.ts:
-    plugins:
-      - typescript
-      - typescript-operations

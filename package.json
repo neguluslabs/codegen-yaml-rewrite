@@ -1,9 +1,16 @@
 {
   "name": "codegen-yaml-rewrite",
-  "version": "1.0.3",
-  "description": "ee",
+  "version": "1.0.4",
+  "description": "yaml rewrite for graphl codegen",
   "type": "module",
   "main": "index.js",
+  "bin": "./index.js",
+  "keywords": [
+    "graphql",
+    "codegen",
+    "yaml",
+    "rewrite"
+  ],
   "author": {
     "name": "Sajan Thomas",
     "email": "info@sajan.dev"

@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import path from "path";
 const workingDir = process.cwd(); // entirely dependent on what directory the process was launched from, so gotta find a better soln
 const errorLogger = (err) => {
