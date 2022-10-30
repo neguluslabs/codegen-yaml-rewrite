@@ -1,4 +1,5 @@
-# codegen-yaml-rewrite [https://www.npmjs.com/package/codegen-yaml-rewrite]
+# codegen-yaml-rewrite 
+[https://www.npmjs.com/package/codegen-yaml-rewrite](npm link)
 
 A simple package to rewrite the schema URL in graphql codegen.yaml file
 
